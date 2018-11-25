@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-
-import './Topic.scss'
+import 'bulma'
+import Box from '@tds/core-box'
 
 const streamTopic = nodecg.Replicant('streamTopic')
 
@@ -40,11 +40,25 @@ export default class Topic extends Component {
 
   render() {
     return (
-      <div className="topic">
-        <h1>Stream Topic</h1>
+      <div className="topic" style={{ backgroundColor: 'white' }}>
+        <h3 className="title is-3">Stream Topic</h3>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.currentTopic} onChange={this.handleChange} />
-          <input type="submit" value="Change Topic" />
+          <div className="field">
+            <div className="control">
+              <Box between={3}>
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Change stream topic"
+                  value={this.state.currentTopic}
+                  onChange={this.handleChange}
+                />
+                <button className="button is-primary" type="submit" value="Change Topic">
+                  Change Topic
+                </button>
+              </Box>
+            </div>
+          </div>
         </form>
       </div>
     )

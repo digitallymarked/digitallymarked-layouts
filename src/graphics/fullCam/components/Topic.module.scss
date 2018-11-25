@@ -1,0 +1,29 @@
+#topic {
+  width: 1824px;
+  height: 71px;
+  background: #202833;
+  box-shadow: 0 0 16px 0 rgba(32, 40, 51, 0.50);
+  border-radius: 8px;
+  padding: 16px;
+
+  .label {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 32px;
+    color: #F8F9FA;
+    text-align: left;
+    display: inline-block;
+
+    span {
+      color: #0087E8;
+    }
+  }
+
+  .value {
+    margin-left: 16px;
+    display: inline-block;
+    font-family: 'Raleway';
+    color: #F8F9FA;
+    font-size: 32px;
+  }
+}
