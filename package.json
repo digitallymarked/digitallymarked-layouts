@@ -21,10 +21,16 @@
       "headerColor": "#525F78"
     }],
     "graphics": [{
-      "file": "omnibar.html",
-      "width": 1920,
-      "height": 162
-    }]
+        "file": "omnibar.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "fullCam.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
   },
   "repository": "https://github.com/nodecg/nodecg.git",
   "license": "MIT",
