@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400");
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400');
+
+$mainFont:'Montserrat';
+$secondaryFont: 'Raleway';
+
+#root {
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+}
