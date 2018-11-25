@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 import 'normalize.css'
 import '../_common.scss'
-import './omnibar.scss'
 
+import background from './omnibar-background.png'
 // class Omnibar extends Component {
 //   constructor(props) {
 //     super(props)
@@ -39,7 +40,7 @@ import './omnibar.scss'
 
 ReactDOM.render(
   <div id="omnibar">
-    <div className="background" />
+    <div className="background" style={{ backgroundImage: `url(${background})` }} />
   </div>,
   document.getElementById('root')
 )
