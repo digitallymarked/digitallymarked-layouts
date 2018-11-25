@@ -13,35 +13,35 @@ Once you get NodeCG version `^1.0.0` up and running, you are good to go.
 
 - Omnibar
 
-  - [x] Stream topic
-  - [] Latest Sub
-  - [] Latest donation
-  - [] Top donation
-  - [] Current song
-  - [] Alerts
+  - [ ] Latest Sub
+  - [ ] Latest donation
+  - [ ] Top donation
+  - [ ] Current song
+  - [ ] Alerts
 
 - Main
 
-  - [] Layout
-  - [] Goal widget
+  - [ ] Stream topic
+  - [ ] Layout
+  - [ ] Goal widget
 
 - Full Cam
 
-  - [] Layout
-  - [] Chat
-  - [] Goal widget
+  - [ ] Layout
+  - [ ] Chat
+  - [ ] Goal widget
 
 - Intro
 
-  - [] Design it
+  - [ ] Design it
 
 - Outro
 
-  - [] Design it
+  - [ ] Design it
 
 - Break
 
-  - [] Design it
+  - [ ] Design it
 
 ## Credits
 
