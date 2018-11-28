@@ -2,28 +2,29 @@
   width: 1824px;
   height: 71px;
   background: #202833;
-  box-shadow: 0 0 16px 0 rgba(32, 40, 51, 0.50);
+  box-shadow: 0 0 16px 0 rgba(32, 40, 51, 0.5);
   border-radius: 8px;
   padding: 16px;
+  opacity: 0;
 
   .label {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 700;
     font-size: 32px;
-    color: #F8F9FA;
+    color: #f8f9fa;
     text-align: left;
     display: inline-block;
 
     span {
-      color: #0087E8;
+      color: #0087e8;
     }
   }
 
   .value {
     margin-left: 16px;
     display: inline-block;
-    font-family: 'Raleway';
-    color: #F8F9FA;
+    font-family: "Raleway";
+    color: #f8f9fa;
     font-size: 32px;
   }
 }

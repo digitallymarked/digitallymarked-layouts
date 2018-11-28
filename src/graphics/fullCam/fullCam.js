@@ -6,7 +6,6 @@ import '../_common.scss'
 import './fullCam.scss'
 
 import background from './fullCam-background.png'
-
 import Topic from './components/Topic'
 
 ReactDOM.render(
