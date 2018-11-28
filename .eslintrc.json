@@ -1,13 +1,8 @@
 {
-  "extends": [
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
+  "extends": ["airbnb", "prettier", "prettier/react"],
   "parserOptions": {
     "ecmaVersion": 8,
     "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
       "impliedStrict": true,
       "classes": true
     }
@@ -20,10 +15,7 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "prettier/prettier": [
@@ -45,9 +37,7 @@
       }
     ]
   },
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "globals": {
     "nodecg": false
   }
