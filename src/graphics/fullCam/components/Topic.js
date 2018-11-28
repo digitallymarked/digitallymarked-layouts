@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { TimelineLite, Power2 } from "gsap/all";
+import { TimelineMax, Power2 } from "gsap/all";
 
 import "./Topic.module.scss";
 
@@ -22,27 +22,24 @@ export default class Topic extends Component {
   }
 
   componentDidMount() {
-    NodeCG.waitForReplicants(streamTopic, toggleCheck).then(() => {
-      this.setState({ topic: streamTopic.value });
-      // Listen for changes and update when the Replicant value changes
-      streamTopic.on("change", newValue => {
-        const changeState = () => {
-          this.setState({ topic: newValue });
-        };
-        this.myTween
-          .to(this.myElement, 0.3, {
-            y: -15,
-            opacity: 0,
-            ease: Power2.easeIn
-          })
-          .call(changeState)
-          .set(this.myElement, { y: 15 })
-          .to(this.myElement, 0.3, {
-            y: 0,
-            opacity: 1,
-            ease: Power2.easeOut
-          });
-      });
+    // Listen for changes and update when the Replicant value changes
+    streamTopic.on("change", newValue => {
+      const changeState = () => {
+        this.setState({ topic: newValue });
+      };
+      this.myTween
+        .to(this.myElement, 0.3, {
+          y: -15,
+          opacity: 0,
+          ease: Power2.easeIn
+        })
+        .call(changeState)
+        .set(this.myElement, { y: 15 })
+        .to(this.myElement, 0.3, {
+          y: 0,
+          opacity: 1,
+          ease: Power2.easeOut
+        });
     });
 
     // Listen if toggle is on or not

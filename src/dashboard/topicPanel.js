@@ -63,6 +63,7 @@ class TopicPanel extends Component {
           <Form.Field>
             <Checkbox
               label="Show Topic"
+              toggle
               onChange={this.toggleChange}
               checked={this.state.toggle}
             />
