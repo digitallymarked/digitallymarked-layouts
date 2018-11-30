@@ -21,13 +21,13 @@ Once you get NodeCG version `^1.0.0` up and running, you are good to go.
 
 - Main
 
-  - [ ] Stream topic
   - [ ] Layout
   - [ ] Goal widget
 
 - Full Cam
 
-  - [ ] Layout
+  - [x] Stream topic
+  - [x] Layout
   - [ ] Chat
   - [ ] Goal widget
 

@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import 'normalize.css'
-import '../_common.scss'
+import '../_styles/_common.scss'
 
 import background from './omnibar-background.png'
 // class Omnibar extends Component {

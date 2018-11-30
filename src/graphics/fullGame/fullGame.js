@@ -2,7 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import 'normalize.css'
-import '../_common.scss'
 import './fullGame.scss'
 
 import background from './fullGame-background.png'

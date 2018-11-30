@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+
+  .background {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+  }
+}

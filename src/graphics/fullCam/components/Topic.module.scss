@@ -1,0 +1,33 @@
+@import '../../_styles/common';
+@import '../../_styles/variables';
+@import '../../_styles/mixins';
+
+#topic {
+  width: 1824px;
+  height: 71px;
+  @include card($backgroundColor);
+  border-radius: 8px;
+  padding: 16px;
+  opacity: 0;
+
+  .label {
+    font-family: $mainFont;
+    font-weight: 700;
+    font-size: 32px;
+    color: $offWhite;
+    text-align: left;
+    display: inline-block;
+
+    span {
+      color: $mainColor;
+    }
+  }
+
+  .value {
+    margin-left: 16px;
+    display: inline-block;
+    font-family: $secondaryFont;
+    color: $offWhite;
+    font-size: 32px;
+  }
+}
