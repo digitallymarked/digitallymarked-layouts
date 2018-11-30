@@ -1,0 +1,5 @@
+@mixin card($hexcolor) {
+  background: $hexcolor;
+  box-shadow: 0 0 16px 0 rgba($hexcolor, 0.5);
+
+}
