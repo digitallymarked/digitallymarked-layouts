@@ -1,13 +1,12 @@
 .components-wrapper {
-  position: absolute;
+  box-sizing: border-box;
+  position: relative;
   width: 1872px;
   height: 952px;
   top: 24px;
   left: 24px;
   padding: 24px;
-
-  #topic {
-    position: absolute;
-    bottom: 24px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
