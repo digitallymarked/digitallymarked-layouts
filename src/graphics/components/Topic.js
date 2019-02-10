@@ -28,14 +28,14 @@ export default class Topic extends Component {
         this.setState({ topic: newValue });
       };
       this.myTween
-        .to(this.myElement, 0.3, {
+        .to(this.myElement, 0.2, {
           y: -15,
           opacity: 0,
           ease: Power2.easeIn
         })
         .call(changeState)
         .set(this.myElement, { y: 15 })
-        .to(this.myElement, 0.3, {
+        .to(this.myElement, 0.2, {
           y: 0,
           opacity: 1,
           ease: Power2.easeOut

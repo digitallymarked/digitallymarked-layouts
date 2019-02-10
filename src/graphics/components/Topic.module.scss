@@ -1,9 +1,9 @@
-@import '../../_styles/common';
-@import '../../_styles/variables';
-@import '../../_styles/mixins';
+@import '../_styles/common';
+@import '../_styles/variables';
+@import '../_styles/mixins';
 
 #topic {
-  width: 1824px;
+  width: 100%;
   height: 71px;
   @include card($backgroundColor);
   border-radius: 8px;

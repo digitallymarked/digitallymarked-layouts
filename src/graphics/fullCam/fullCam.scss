@@ -5,9 +5,7 @@
   top: 24px;
   left: 24px;
   padding: 24px;
-
-  #topic {
-    position: absolute;
-    bottom: 24px;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
