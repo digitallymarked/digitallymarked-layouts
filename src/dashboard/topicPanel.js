@@ -7,18 +7,21 @@ import "semantic-ui-css/semantic.min.css";
 
 const streamTopic = nodecg.Replicant("streamTopic");
 const toggleCheck = nodecg.Replicant('toggleCheck')
+const gameShowCheck = nodecg.Replicant('gameShowCheck')
 
 class TopicPanel extends Component {
   constructor(props) {
     super(props);
     this.state = {
       currentTopic: '',
-      toggle: false
+      toggle: false,
+      gameShow: false
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleChange = this.toggleChange.bind(this);
+    this.gameShowChange = this.gameShowChange.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +32,9 @@ class TopicPanel extends Component {
       });
       toggleCheck.on('change', newValue => {
         this.setState({toggle: newValue})
+      })
+      gameShowCheck.on('change', newValue => {
+        this.setState({gameShow: newValue})
       })
     });
   }
@@ -49,6 +55,13 @@ class TopicPanel extends Component {
     this.setState({ toggle: data.checked });
     toggleCheck.value = data.checked
   }
+
+  gameShowChange(event, data) {
+    event.preventDefault();
+    this.setState({ gameShow: data.checked });
+    gameShowCheck.value = data.checked
+  }
+
   render() {
     return (
       <div className="topic">
@@ -66,6 +79,11 @@ class TopicPanel extends Component {
               toggle
               onChange={this.toggleChange}
               checked={this.state.toggle}
+            />
+            <Checkbox
+              label="Show on 'Full Game' screen"
+              onChange={this.gameShowChange}
+              checked={this.state.gameShow}
             />
           </Form.Field>
         </Form>

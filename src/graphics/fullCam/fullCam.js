@@ -5,14 +5,18 @@ import 'normalize.css'
 import './fullCam.scss'
 
 import background from './fullCam-background.png'
-import Topic from './components/Topic'
+import Topic from '../components/Topic'
+
+const FullCam = () => (
+  <div id="fullCam">
+  <div className="background" style={{ backgroundImage: `url(${background})` }} />
+  <div className="components-wrapper">
+    <Topic/>
+  </div>
+</div>
+)
 
 ReactDOM.render(
-  <div id="fullCam">
-    <div className="background" style={{ backgroundImage: `url(${background})` }} />
-    <div className="components-wrapper">
-      <Topic />
-    </div>
-  </div>,
+ <FullCam/>,
   document.getElementById('root')
 )

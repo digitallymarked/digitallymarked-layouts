@@ -7,3 +7,15 @@
   top: 207px;
   left: 24px;
 }
+
+.gameWindow-wrapper {
+  position: absolute;
+  width: 1689px;
+  height: 952px;
+  left: 207px;
+  top: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
