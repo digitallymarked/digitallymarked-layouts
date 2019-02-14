@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { TimelineMax } from 'gsap/all'
 import ReactDOM from 'react-dom'
-import Iframe from 'react-iframe'
 
 
 import 'normalize.css'
@@ -43,7 +42,7 @@ class FullGame extends Component {
       <div id="fullGame">
         <div className="background" style={{ backgroundImage: `url(${background})` }} />
         <div className="components-wrapper">
-          <iframe src={url} width="100%" referrerPolicy="no-referrer" frameborder="0" id="donationGoal"></iframe>
+          <iframe src={url} referrerPolicy="no-referrer" frameborder="0" id="donationGoal"></iframe>
         </div>
         <div className="gameWindow-wrapper">
           <div ref={div => (this.myWrapper = div)}>

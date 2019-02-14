@@ -44,7 +44,7 @@
   "dependencies": {
     "gsap": "^2.0.2",
     "normalize.css": "^8.0.1",
-    "react": "^16.4.2",
+    "react": ">=16.x.x",
     "react-dom": "^16.4.2",
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.83.0"

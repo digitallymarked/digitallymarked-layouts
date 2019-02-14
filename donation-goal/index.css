@@ -1,4 +1,11 @@
 /* All html objects will be wrapped in the #wrap div */
+#wrap {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  right: 16px;
+}
+
 .goal-cont {
   color: white;
   background: #929FB1;
