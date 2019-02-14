@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
 import { TimelineMax } from 'gsap/all'
 import ReactDOM from 'react-dom'
+import Iframe from 'react-iframe'
+
 
 import 'normalize.css'
 import './fullGame.scss'
 
 import background from './fullGame-background.png'
 import Topic from '../components/Topic'
+import { url } from '../../../stream-assets/donationGoal'
 
 const gameShowCheck = nodecg.Replicant('gameShowCheck')
 
@@ -39,7 +42,9 @@ class FullGame extends Component {
     return (
       <div id="fullGame">
         <div className="background" style={{ backgroundImage: `url(${background})` }} />
-        <div className="components-wrapper" />
+        <div className="components-wrapper">
+          <iframe src={url} width="100%" referrerPolicy="no-referrer" frameborder="0" id="donationGoal"></iframe>
+        </div>
         <div className="gameWindow-wrapper">
           <div ref={div => (this.myWrapper = div)}>
             <Topic />

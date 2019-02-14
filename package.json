@@ -13,13 +13,16 @@
   ],
   "nodecg": {
     "compatibleRange": "^1.0.0",
-    "dashboardPanels": [{
-      "name": "topicPanel",
-      "title": "Topic",
-      "width": 3,
-      "file": "topicPanel.html"
-    }],
-    "graphics": [{
+    "dashboardPanels": [
+      {
+        "name": "topicPanel",
+        "title": "Topic",
+        "width": 3,
+        "file": "topicPanel.html"
+      }
+    ],
+    "graphics": [
+      {
         "file": "omnibar.html",
         "width": 1920,
         "height": 1080

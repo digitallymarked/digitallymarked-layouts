@@ -13,19 +13,19 @@ document.addEventListener('goalLoad', function (obj) {
     percentage = $('#progress-number-mark');
 
   $('#title').html(title);
-  $('#goal-current').text(current + " " + obj.detail.currency);
-  $('#goal-total').text(target + " " + obj.detail.currency);
+  $('#goal-current').text(current);
+  $('#goal-total').text(target);
   $('#percent').text(parseInt(current * oneBarWidth) + '%')
 
   //Set progressbar width
   if (current >= target) {
-    setWidth = '100%'
+    setWidth = 100
   } else {
     setWidth = current * oneBarWidth
   }
   $('#progress-bar').width(setWidth + '%');
   percentage.css({
-    left: (setWidth - 0.5) + '%'
+    left: (setWidth - 2.5) + '%'
   });
 });
 document.addEventListener('goalEvent', function (obj) {
@@ -86,7 +86,7 @@ document.addEventListener('goalEvent', function (obj) {
           val: current,
           roundProps: "val",
           onUpdate: function () {
-            $('#goal-current').text(countM.val + " " + obj.detail.currency);
+            $('#goal-current').text(countM.val);
           },
           ease: Power4.easeInOut
         }, 'start')
@@ -95,7 +95,7 @@ document.addEventListener('goalEvent', function (obj) {
           ease: Power4.easeInOut
         }, offset)
         .to(percentage, 1.5, {
-          left: (setWidth - 2.5) + '%',
+          left: (setWidth - 10) + '%',
           ease: Power4.easeInOut
         }, offset)
         .to(countP, 1.5, {
