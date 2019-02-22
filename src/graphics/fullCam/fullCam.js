@@ -6,8 +6,7 @@ import './fullCam.scss';
 
 import background from './fullCam-background.png';
 import Topic from '../components/Topic';
-
-import { url } from '../../../stream-assets/donationGoal';
+import DonationGoal from '../components/DonationGoal'
 
 const FullCam = () => (
   <div id="fullCam">
@@ -16,12 +15,7 @@ const FullCam = () => (
       style={{ backgroundImage: `url(${background})` }}
     />
     <div className="components-wrapper">
-      <iframe
-        src={url}
-        referrerPolicy="no-referrer"
-        frameborder="0"
-        id="donationGoal"
-      />
+      <DonationGoal/>
       <Topic />
     </div>
   </div>

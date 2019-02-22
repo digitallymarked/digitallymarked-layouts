@@ -30,7 +30,7 @@ class DonationGoalPanel extends Component {
   toggleChange(event,data) {
     event.preventDefault();
     this.setState({ toggle: data.checked });
-    toggleCheck.value = data.checked
+    donationGoal.value = data.checked
   }
 
 
