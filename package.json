@@ -13,8 +13,7 @@
   ],
   "nodecg": {
     "compatibleRange": "^1.0.0",
-    "dashboardPanels": [
-      {
+    "dashboardPanels": [{
         "name": "topicPanel",
         "title": "Topic",
         "width": 3,
@@ -27,8 +26,7 @@
         "file": "donationGoalPanel.html"
       }
     ],
-    "graphics": [
-      {
+    "graphics": [{
         "file": "omnibar.html",
         "width": 1920,
         "height": 1080
@@ -75,6 +73,6 @@
   },
   "scripts": {
     "dev": "node scripts/bundle.js",
-    "bundle": "del dashboard extension graphics && NODE_ENV=production yarn build"
+    "bundle": "del dashboard extension graphics && NODE_ENV=production yarn dev"
   }
 }
