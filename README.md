@@ -6,7 +6,7 @@ Once you get NodeCG version `^1.0.0` up and running, you are good to go.
 ## Install and Use
 
 1. `yarn install`
-2. `yarn build` for development
+2. `yarn dev` for development
 3. `yarn bundle` for production
 
 ## Todo
@@ -19,17 +19,18 @@ Once you get NodeCG version `^1.0.0` up and running, you are good to go.
   - [ ] Current song
   - [ ] Alerts
 
-- Main
+- Full Game
 
-  - [ ] Layout
-  - [ ] Goal widget
+  - [x] Layout
+  - [x] Stream topic
+  - [x] Donation Goal widget
 
 - Full Cam
 
   - [x] Stream topic
   - [x] Layout
+  - [x] Donation Goal widget
   - [ ] Chat
-  - [ ] Goal widget
 
 - Intro
 
