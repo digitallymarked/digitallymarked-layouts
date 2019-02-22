@@ -19,6 +19,12 @@
         "title": "Topic",
         "width": 3,
         "file": "topicPanel.html"
+      },
+      {
+        "name": "donationGoalPanel",
+        "title": "Donation Goal",
+        "width": 2,
+        "file": "donationGoalPanel.html"
       }
     ],
     "graphics": [
