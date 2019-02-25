@@ -8,9 +8,8 @@
 
 .goal-cont {
   color: white;
-  background: #929FB1;
+  background: #929fb1;
   padding: 24px;
-  padding-bottom: 40px;
   box-sizing: border-box;
   position: absolute;
   width: 100%;
@@ -30,11 +29,13 @@
   margin-bottom: 16px;
 }
 
-#goal-current::before {
+#goal-current::before,
+#goal-total::before {
   content: '€';
 }
 
-#goal-bar {
+#goal-bar,
+#goal-total {
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
@@ -42,46 +43,50 @@
   font-weight: 700;
   line-height: 32px;
   text-align: center;
-  margin-bottom: 16px;
-  color: #F8F9FA;
+  color: #f8f9fa;
 }
 
 #goal-total {
   color: rgba(64, 75, 90, 0.8);
+  margin: 0;
+  margin-left: 8px;
+  display: flex;
 }
 
 #progress-wrapper {
   position: relative;
   width: 100%;
-  top: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 24px;
 }
 
 #progress-bar {
   width: 1%;
   height: 8px;
-  background: #0087E8;
+  background: #0087e8;
   border-radius: 4px;
-  position: relative;
+  position: absolute;
   z-index: 3;
-
 }
 
 #progress-bar2 {
   width: 100%;
   height: 8px;
-  background: #F8F9FA;
+  background: #f8f9fa;
   border-radius: 4px;
   overflow: hidden;
-  position: absolute;
-  top: 0;
+  position: relative;
+  box-sizing: border-box;
 }
 
 #progress-number-wrapper {
-  min-width: 64px;
   box-sizing: border-box;
   display: block;
-  position: relative;
-  top: -40px;
+  position: absolute;
+  top: -24px;
+  margin-left: -2px;
 }
 
 #progress-number-wrapper * {
@@ -91,12 +96,20 @@
 #progress-number-mark {
   margin-bottom: 4px;
   border-radius: 4px;
-  background: #0087E8;
-  padding: 4px 8px;
+  background: #0087e8;
+  padding: 4px;
   position: absolute;
   bottom: 0;
   left: 0;
   transform: translateX(-50%);
+  min-width: 48px;
+  text-align: center;
+}
+
+#percent {
+  top: -1px;
+  position: relative;
+  left: 1px;
 }
 
 #progress-number-wrapper,
@@ -113,7 +126,7 @@
 #down-arrow {
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 8px solid #0087E8;
+  border-top: 8px solid #0087e8;
   position: absolute;
   left: 50%;
   top: 100%;
