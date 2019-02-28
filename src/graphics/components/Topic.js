@@ -1,58 +1,56 @@
-import React, { Component } from "react";
-import { TimelineMax, Power2 } from "gsap/all";
+import React, { Component } from 'react'
+import { TimelineMax, Power2 } from 'gsap/all'
 
-import "./Topic.module.scss";
+import './Topic.scss'
 
-const streamTopic = nodecg.Replicant("streamTopic");
-const toggleCheck = nodecg.Replicant("toggleCheck");
+const streamTopic = nodecg.Replicant('streamTopic')
+const toggleCheck = nodecg.Replicant('toggleCheck')
 
 export default class Topic extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      topic: ""
-    };
+      topic: '',
+    }
 
     // reference to the DOM node
-    this.myElement = null;
-    this.myWrapper = null;
+    this.myElement = null
+    this.myWrapper = null
 
     // reference to the animation
-    this.myTween = new TimelineMax();
+    this.myTween = new TimelineMax()
   }
 
   componentDidMount() {
     // Listen for changes and update when the Replicant value changes
-    streamTopic.on("change", newValue => {
+    streamTopic.on('change', newValue => {
       const changeState = () => {
-        this.setState({ topic: newValue });
-      };
+        this.setState({ topic: newValue })
+      }
       this.myTween
         .to(this.myElement, 0.2, {
           y: -15,
           opacity: 0,
-          ease: Power2.easeIn
+          ease: Power2.easeIn,
         })
         .call(changeState)
         .set(this.myElement, { y: 15 })
         .to(this.myElement, 0.2, {
           y: 0,
           opacity: 1,
-          ease: Power2.easeOut
-        });
-    });
+          ease: Power2.easeOut,
+        })
+    })
 
     // Listen if toggle is on or not
-    toggleCheck.on("change", newValue => {
-      this.setState({ topic: streamTopic.value });
+    toggleCheck.on('change', newValue => {
+      this.setState({ topic: streamTopic.value })
       if (newValue) {
-        this.myTween
-          .set(this.myWrapper, { y: 15 })
-          .to(this.myWrapper, 0.3, { y: 0, opacity: 1 });
+        this.myTween.set(this.myWrapper, { y: 15 }).to(this.myWrapper, 0.3, { y: 0, opacity: 1 })
       } else {
-        this.myTween.to(this.myWrapper, 0.3, { y: 15, opacity: 0 });
+        this.myTween.to(this.myWrapper, 0.3, { y: 15, opacity: 0 })
       }
-    });
+    })
   }
 
   render() {
@@ -65,6 +63,6 @@ export default class Topic extends Component {
           {this.state.topic}
         </div>
       </div>
-    );
+    )
   }
 }
