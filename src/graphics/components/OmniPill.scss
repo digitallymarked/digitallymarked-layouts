@@ -1,0 +1,21 @@
+@import "../_styles/variables";
+
+.pillWrapper {
+  background: $offWhite;
+  font-family: $secondaryFont;
+  border-radius: 4px;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+  }
+  span {
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 8px;
+  }
+}
