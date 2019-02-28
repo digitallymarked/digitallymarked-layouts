@@ -45,7 +45,7 @@
       }
     ]
   },
-  "repository": "https://github.com/nodecg/nodecg.git",
+  "repository": "https://github.com/digitallymarked/digitallymarked-layouts.git",
   "license": "MIT",
   "dependencies": {
     "gsap": "^2.0.2",
@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "del-cli": "^1.1.0",
-    "eslint": "^5.9.0",
+    "eslint": "^5.14.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^3.3.0",
     "eslint-plugin-import": "^2.14.0",

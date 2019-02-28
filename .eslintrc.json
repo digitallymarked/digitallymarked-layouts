@@ -35,7 +35,9 @@
         "ignoreSiblings": true,
         "argsIgnorePattern": "res|next|^err"
       }
-    ]
+    ],
+    "react/prop-types": 0,
+    "consistent-return": "off"
   },
   "plugins": ["prettier"],
   "globals": {
