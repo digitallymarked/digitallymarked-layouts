@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import CurrentSong from './CuurentSong'
+import CurrentSong from './CurrentSong'
 
 import 'normalize.css'
 import '../_styles/_common.scss'
