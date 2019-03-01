@@ -65,9 +65,9 @@ class CurrentSong extends Component {
     if (!prevState.playing && playing) { //If unpaused, show component
       this.myTween
         .set(this.myWrapper, { y: 15 })
-        .to(this.myWrapper, 0.3, { y: 0, opacity: 1 });
+        .to(this.myWrapper, 0.3, { y: 0, opacity: 1, ease: Power2.easeOut });
     } else if (prevState.playing && !playing) { //If paused, hide component
-      this.myTween.to(this.myWrapper, 0.3, { y: 15, opacity: 0 });
+      this.myTween.to(this.myWrapper, 0.3, { y: 15, opacity: 0, ease: Power2.easeIn });
     }
   }
 
