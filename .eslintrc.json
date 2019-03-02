@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "prettier",
-    "prettier/react"
-  ],
+  "extends": ["airbnb", "prettier", "prettier/react"],
   "parserOptions": {
     "ecmaVersion": 8,
     "ecmaFeatures": {
@@ -19,10 +15,7 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "prettier/prettier": [
@@ -46,11 +39,10 @@
     "react/prop-types": 0,
     "consistent-return": "off",
     "import/prefer-default-export": "off",
-    "eqeqeq": "off"
+    "eqeqeq": "off",
+    "jsx-a11y/alt-text": "off"
   },
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "globals": {
     "nodecg": false,
     "NodeCG": false
