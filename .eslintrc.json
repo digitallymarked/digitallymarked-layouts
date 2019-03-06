@@ -35,10 +35,16 @@
         "ignoreSiblings": true,
         "argsIgnorePattern": "res|next|^err"
       }
-    ]
+    ],
+    "react/prop-types": 0,
+    "consistent-return": "off",
+    "import/prefer-default-export": "off",
+    "eqeqeq": "off",
+    "jsx-a11y/alt-text": "off"
   },
   "plugins": ["prettier"],
   "globals": {
-    "nodecg": false
+    "nodecg": false,
+    "NodeCG": false
   }
 }
