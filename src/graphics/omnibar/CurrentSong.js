@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Transition } from 'react-transition-group';
-import { TimelineMax, Power2, Power4 } from 'gsap/all';
+// import { Transition } from 'react-transition-group';
+// import { TimelineMax, Power2, Power4 } from 'gsap/all';
 import OmniPill from '../components/OmniPill';
 
 import music from './icons/music.svg';
@@ -15,68 +15,56 @@ class CurrentSong extends Component {
       name: '',
       artist: '',
       playing: false,
+      loaded: false
     };
   }
 
-  componentDidMount() {
-    // Wait for Replicant to be declared
+  componentWillMount() {
+    // Wait for replicant to load
     NodeCG.waitForReplicants(songRep).then(() => {
       // Load initial state of the items
-      nodecg.readReplicant('currentSong', 'ncg-spotify', value => {
+      const {name, artist, playing} = songRep.value
         this.setState({
-          name: value.name,
-          artist: value.artist,
-          playing: value.playing,
+          name,
+          artist,
+          playing,
+          loaded:true
         });
-      });
+
     });
+  }
+
+  componentDidMount() {
 
     // Listen for changes
     songRep.on('change', (newVal, oldVal) => {
       const { name, artist, playing } = newVal;
 
+      if (oldVal == undefined) {
+        oldVal = newVal
+      }
+
       if (!oldVal.playing && playing) {
         this.setState({ playing });
-      } else if (!oldVal.playing && !playing ) {
+      } else if (!oldVal.playing && !playing) {
         this.setState({ playing });
       }
 
       // Don't update if song hasn't changed
-      if (oldVal.name == name) {
-        return;
-      } else {
+      if (oldVal.name != name) {
         this.setState({
           name,
           artist,
         });
-
       }
-
     });
   }
 
+
   render() {
-    const { name, artist, playing } = this.state;
-    const tl = new TimelineMax();
+    const { name, artist, playing, loaded } = this.state;
     return (
-      <Transition
-        // timeout={100}
-        mountOnEnter
-        unmountOnExit
-        in={playing}
-        addEndListener={(node, done) => {
-          tl.set(node, { y: playing ? 15 : 0 }).to(node, 0.3, {
-            y: playing ? 0 : 15,
-            autoAlpha: playing ? 1 : 0,
-            ease: playing ? Power2.easeOut : Power4.easeIn,
-            onComplete: done,
-          });
-        }}
-      >
-        <OmniPill icon={music} first={name}>
-          <span>{name}</span>- {artist}
-        </OmniPill>
-      </Transition>
+      loaded && <OmniPill icon={music} first={name} show={playing}><span>{name}</span>- {artist}</OmniPill>
     );
   }
 }
