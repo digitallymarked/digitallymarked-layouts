@@ -49,7 +49,7 @@ class OmniPill extends Component {
   }
 
   render() {
-    const { show } = this.props;
+    const { show, label, icon } = this.props;
     const tl = new TimelineMax();
     return (
       <Transition
@@ -68,7 +68,8 @@ class OmniPill extends Component {
       >
         <div className="pillWrapper">
           <div>
-            <img className="icon" src={this.props.icon} />
+            <img className="icon" src={icon} />
+            {label ? <div className="label">{label}</div> : null}
             <div className="content" ref={div => (this.myContent = div)}>
               {this.state.content}
             </div>
