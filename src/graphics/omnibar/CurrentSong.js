@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import { Transition } from 'react-transition-group';
-// import { TimelineMax, Power2, Power4 } from 'gsap/all';
 import OmniPill from '../components/OmniPill';
 
 import music from './icons/music.svg';
@@ -15,7 +13,7 @@ class CurrentSong extends Component {
       name: '',
       artist: '',
       playing: false,
-      loaded: false
+      loaded: false,
     };
   }
 
@@ -23,25 +21,23 @@ class CurrentSong extends Component {
     // Wait for replicant to load
     NodeCG.waitForReplicants(songRep).then(() => {
       // Load initial state of the items
-      const {name, artist, playing} = songRep.value
-        this.setState({
-          name,
-          artist,
-          playing,
-          loaded:true
-        });
-
+      const { name, artist, playing } = songRep.value;
+      this.setState({
+        name,
+        artist,
+        playing,
+        loaded: true,
+      });
     });
   }
 
   componentDidMount() {
-
     // Listen for changes
     songRep.on('change', (newVal, oldVal) => {
       const { name, artist, playing } = newVal;
 
       if (oldVal == undefined) {
-        oldVal = newVal
+        oldVal = newVal;
       }
 
       if (!oldVal.playing && playing) {
@@ -60,11 +56,14 @@ class CurrentSong extends Component {
     });
   }
 
-
   render() {
     const { name, artist, playing, loaded } = this.state;
     return (
-      loaded && <OmniPill icon={music} first={name} show={playing}><span>{name}</span>- {artist}</OmniPill>
+      loaded && (
+        <OmniPill icon={music} first={name} show={playing}>
+          <span>{name}</span>- {artist}
+        </OmniPill>
+      )
     );
   }
 }
