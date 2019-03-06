@@ -1,19 +1,21 @@
-import React, { Component } from 'react'
-import OmniPill from '../components/OmniPill'
+import React, { Component } from 'react';
+import { Transition } from 'react-transition-group';
+import { TimelineMax, Power2, Power4 } from 'gsap/all';
+import OmniPill from '../components/OmniPill';
 
-import music from './icons/music.svg'
+import music from './icons/music.svg';
 
 // NodeCG replicant for connecting to Spotify api - https://github.com/EwanLyon/ncg-spotify
-const songRep = nodecg.Replicant('currentSong', 'ncg-spotify')
+const songRep = nodecg.Replicant('currentSong', 'ncg-spotify');
 
 class CurrentSong extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       name: '',
       artist: '',
       playing: false,
-    }
+    };
   }
 
   componentDidMount() {
@@ -25,44 +27,58 @@ class CurrentSong extends Component {
           name: value.name,
           artist: value.artist,
           playing: value.playing,
-        })
-      })
-    })
+        });
+      });
+    });
 
     // Listen for changes
     songRep.on('change', (newVal, oldVal) => {
-      const { name, artist, playing } = newVal
+      const { name, artist, playing } = newVal;
 
-      if (oldVal.playing != playing && playing == true) {
-        this.setState({ playing: true })
-      }
-      if (oldVal.playing != playing && playing == false) {
-        this.setState({ playing: false })
+      if (!oldVal.playing && playing) {
+        this.setState({ playing });
+      } else if (!oldVal.playing && !playing ) {
+        this.setState({ playing });
       }
 
       // Don't update if song hasn't changed
       if (oldVal.name == name) {
-        // console.log(name)
-        // return null
+        return;
       } else {
         this.setState({
           name,
           artist,
-          // playing,
-        })
+        });
+
       }
-    })
+
+    });
   }
 
   render() {
+    const { name, artist, playing } = this.state;
+    const tl = new TimelineMax();
     return (
-      <div id="currentSong" ref={div => (this.myWrapper = div)}>
-        <OmniPill icon={music} show={this.state.playing}>
-          {this.state.artist}: <span>{this.state.name}</span>
+      <Transition
+        // timeout={100}
+        mountOnEnter
+        unmountOnExit
+        in={playing}
+        addEndListener={(node, done) => {
+          tl.set(node, { y: playing ? 15 : 0 }).to(node, 0.3, {
+            y: playing ? 0 : 15,
+            autoAlpha: playing ? 1 : 0,
+            ease: playing ? Power2.easeOut : Power4.easeIn,
+            onComplete: done,
+          });
+        }}
+      >
+        <OmniPill icon={music} first={name}>
+          <span>{name}</span>- {artist}
         </OmniPill>
-      </div>
-    )
+      </Transition>
+    );
   }
 }
 
-export default CurrentSong
+export default CurrentSong;
