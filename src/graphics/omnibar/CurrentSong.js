@@ -61,7 +61,7 @@ class CurrentSong extends Component {
     return (
       loaded && (
         <OmniPill icon={music} first={name} show={playing}>
-          <span>{name}</span>- {artist}
+          <span className="label">{name}</span>- {artist}
         </OmniPill>
       )
     );

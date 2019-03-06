@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import CurrentSong from './CurrentSong'
+import NewestFollower from './NewestFollower'
 
 import 'normalize.css'
 import '../_styles/_common.scss'
@@ -12,7 +13,7 @@ const Omnibar = () => (
   <div id="omnibar">
     <div className="background" style={{ backgroundImage: `url(${background})` }} />
     <div className="componentsWrapper">
-      <div />
+      <NewestFollower />
       <CurrentSong />
     </div>
   </div>
